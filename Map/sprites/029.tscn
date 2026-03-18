@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b7vx6adl2y71j"]
+
+[ext_resource type="Texture2D" uid="uid://cmku4o1resl61" path="res://Map/sprites/029.png" id="1_s0yp3"]
+
+[node name="029" type="StaticBody2D" unique_id=1485582969]
+
+[node name="029" type="Sprite2D" parent="." unique_id=1808262185]
+position = Vector2(115, 244)
+texture = ExtResource("1_s0yp3")

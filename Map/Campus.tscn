@@ -1,0 +1,167 @@
+[gd_scene format=3 uid="uid://bkcf8og7s1ptd"]
+
+[ext_resource type="PackedScene" uid="uid://c82nu0t4apbx7" path="res://Map/sprites/000.tscn" id="2_im81j"]
+[ext_resource type="PackedScene" uid="uid://sl5ocurtx5i" path="res://Map/sprites/001.tscn" id="3_jggu3"]
+[ext_resource type="PackedScene" uid="uid://cdg02f222bfuf" path="res://Map/sprites/002.tscn" id="4_jl36w"]
+[ext_resource type="PackedScene" uid="uid://bt5nuxbw6svi2" path="res://Map/sprites/003.tscn" id="5_5mcyn"]
+[ext_resource type="PackedScene" uid="uid://bfhua5net32jx" path="res://Map/sprites/004.tscn" id="6_6g0y1"]
+[ext_resource type="PackedScene" uid="uid://djipo6jdxc12r" path="res://Map/sprites/005.tscn" id="7_sjfke"]
+[ext_resource type="PackedScene" uid="uid://clx8sqt2gl7wi" path="res://Map/sprites/006.tscn" id="8_sho3k"]
+[ext_resource type="PackedScene" uid="uid://c71amdyf0o6ya" path="res://Map/sprites/007.tscn" id="9_7x3lq"]
+[ext_resource type="PackedScene" uid="uid://cbu6v14k67n44" path="res://Map/sprites/008.tscn" id="10_a0flk"]
+[ext_resource type="PackedScene" uid="uid://crgnvoeuwdnom" path="res://Map/sprites/009.tscn" id="11_3iw0u"]
+[ext_resource type="PackedScene" uid="uid://c6g1ryxsq4pk2" path="res://Map/sprites/010.tscn" id="12_ggp71"]
+[ext_resource type="PackedScene" uid="uid://d1mmybukkgoy8" path="res://Map/sprites/011.tscn" id="13_1h3gm"]
+[ext_resource type="PackedScene" uid="uid://bx3lhrdul0j4y" path="res://Map/sprites/012.tscn" id="14_bg8mx"]
+[ext_resource type="PackedScene" uid="uid://b1i1iejev1kob" path="res://Map/sprites/013.tscn" id="15_o0cyn"]
+[ext_resource type="PackedScene" uid="uid://xo4apjk0e6u" path="res://Map/sprites/014.tscn" id="16_2aw4x"]
+[ext_resource type="PackedScene" uid="uid://vqdlsro7m1bq" path="res://Map/sprites/015.tscn" id="17_72lps"]
+[ext_resource type="PackedScene" uid="uid://dkk4x6s0ihqg7" path="res://Map/sprites/016.tscn" id="18_heksk"]
+[ext_resource type="PackedScene" uid="uid://dcrmihtl4maff" path="res://Map/sprites/017.tscn" id="19_2p8qi"]
+[ext_resource type="PackedScene" uid="uid://vfrapxjxwmad" path="res://Map/sprites/018.tscn" id="20_vtluc"]
+[ext_resource type="PackedScene" uid="uid://bj1qv6ff81g7h" path="res://Map/sprites/019.tscn" id="21_mlr5h"]
+[ext_resource type="PackedScene" uid="uid://bw6muckjonunr" path="res://Map/sprites/020.tscn" id="22_eryro"]
+[ext_resource type="PackedScene" uid="uid://d2j7boyy34lp5" path="res://Map/sprites/021.tscn" id="23_8tyms"]
+[ext_resource type="PackedScene" uid="uid://2r7o2k3ksijm" path="res://Map/sprites/022.tscn" id="24_r48a1"]
+[ext_resource type="PackedScene" uid="uid://cncfylxpxafcg" path="res://Map/sprites/023.tscn" id="25_bonmk"]
+[ext_resource type="PackedScene" uid="uid://sb2a237hgm7e" path="res://Map/sprites/024.tscn" id="26_gjco4"]
+[ext_resource type="PackedScene" uid="uid://c7ie3aensaj0o" path="res://Map/sprites/025.tscn" id="27_u7xci"]
+[ext_resource type="PackedScene" uid="uid://sq71cvo47tpo" path="res://Map/sprites/026.tscn" id="28_bg8mx"]
+[ext_resource type="PackedScene" uid="uid://dr3hgeaf5ngfs" path="res://Map/sprites/027.tscn" id="29_o0cyn"]
+[ext_resource type="PackedScene" uid="uid://byn2ea6blb3vu" path="res://Map/sprites/028.tscn" id="30_2aw4x"]
+[ext_resource type="PackedScene" uid="uid://b7vx6adl2y71j" path="res://Map/sprites/029.tscn" id="31_72lps"]
+[ext_resource type="PackedScene" uid="uid://chitikreroakv" path="res://Map/sprites/030.tscn" id="32_heksk"]
+[ext_resource type="PackedScene" uid="uid://cf8rgk2n7iyrw" path="res://Map/sprites/031.tscn" id="33_2p8qi"]
+[ext_resource type="PackedScene" uid="uid://dojj42efrinay" path="res://Map/sprites/032.tscn" id="34_vtluc"]
+[ext_resource type="PackedScene" uid="uid://dlfugbdf26s40" path="res://Map/sprites/033.tscn" id="35_mlr5h"]
+[ext_resource type="PackedScene" uid="uid://chek4hgtbbqcm" path="res://Map/sprites/034.tscn" id="36_eryro"]
+[ext_resource type="PackedScene" uid="uid://3esgdvde2li" path="res://Map/sprites/036.tscn" id="37_8tyms"]
+[ext_resource type="PackedScene" uid="uid://bifqr6tp081k3" path="res://Map/sprites/035.tscn" id="38_r48a1"]
+[ext_resource type="PackedScene" uid="uid://dp8q3sict4xmh" path="res://Map/background.tscn" id="39_2aw4x"]
+[ext_resource type="PackedScene" uid="uid://63otlsfsjv6o" path="res://Characters/Player.tscn" id="39_o0cyn"]
+
+[node name="Campus" type="Node2D" unique_id=517608768]
+texture_filter = 1
+
+[node name="YSort" type="Node2D" parent="." unique_id=908081993]
+y_sort_enabled = true
+position = Vector2(203, 303)
+
+[node name="000" parent="YSort" unique_id=1581981823 instance=ExtResource("2_im81j")]
+position = Vector2(33, -160)
+
+[node name="001" parent="YSort" unique_id=724402676 instance=ExtResource("3_jggu3")]
+position = Vector2(973, 255)
+
+[node name="002" parent="YSort" unique_id=1201624897 instance=ExtResource("4_jl36w")]
+position = Vector2(1025, 483)
+
+[node name="003" parent="YSort" unique_id=935528004 instance=ExtResource("5_5mcyn")]
+position = Vector2(901, -58)
+
+[node name="004" parent="YSort" unique_id=1799847597 instance=ExtResource("6_6g0y1")]
+position = Vector2(956, 118)
+
+[node name="005" parent="YSort" unique_id=2035334066 instance=ExtResource("7_sjfke")]
+position = Vector2(532, 248)
+
+[node name="006" parent="YSort" unique_id=38238101 instance=ExtResource("8_sho3k")]
+position = Vector2(701, 251)
+
+[node name="007" parent="YSort" unique_id=759182349 instance=ExtResource("9_7x3lq")]
+position = Vector2(557, 408)
+
+[node name="008" parent="YSort" unique_id=810311946 instance=ExtResource("10_a0flk")]
+position = Vector2(463, 416)
+
+[node name="009" parent="YSort" unique_id=1140669162 instance=ExtResource("11_3iw0u")]
+position = Vector2(701, 385)
+
+[node name="010" parent="YSort" unique_id=1657563684 instance=ExtResource("12_ggp71")]
+position = Vector2(747, 277)
+
+[node name="011" parent="YSort" unique_id=21810499 instance=ExtResource("13_1h3gm")]
+position = Vector2(615, 113)
+
+[node name="012" parent="YSort" unique_id=1191681466 instance=ExtResource("14_bg8mx")]
+position = Vector2(629, 36)
+
+[node name="013" parent="YSort" unique_id=699341785 instance=ExtResource("15_o0cyn")]
+position = Vector2(629, -105)
+
+[node name="014" parent="YSort" unique_id=1268147717 instance=ExtResource("16_2aw4x")]
+position = Vector2(725, -15)
+
+[node name="015" parent="YSort" unique_id=1578693515 instance=ExtResource("17_72lps")]
+position = Vector2(127, 257)
+
+[node name="016" parent="YSort" unique_id=1449041017 instance=ExtResource("18_heksk")]
+position = Vector2(260, 108)
+
+[node name="017" parent="YSort" unique_id=921415226 instance=ExtResource("19_2p8qi")]
+position = Vector2(44, 164)
+
+[node name="018" parent="YSort" unique_id=1128557934 instance=ExtResource("20_vtluc")]
+position = Vector2(122, -18)
+
+[node name="019" parent="YSort" unique_id=1082444187 instance=ExtResource("21_mlr5h")]
+position = Vector2(334, 377)
+
+[node name="020" parent="YSort" unique_id=493146210 instance=ExtResource("22_eryro")]
+position = Vector2(328, 264)
+
+[node name="021" parent="YSort" unique_id=643253907 instance=ExtResource("23_8tyms")]
+position = Vector2(442, 107)
+
+[node name="022" parent="YSort" unique_id=1351811087 instance=ExtResource("24_r48a1")]
+position = Vector2(515, -35)
+
+[node name="023" parent="YSort" unique_id=387042582 instance=ExtResource("25_bonmk")]
+position = Vector2(842, -171)
+
+[node name="024" parent="YSort" unique_id=1577724762 instance=ExtResource("26_gjco4")]
+position = Vector2(-39, 484)
+
+[node name="025" parent="YSort" unique_id=85530011 instance=ExtResource("27_u7xci")]
+position = Vector2(500, 483)
+
+[node name="026" parent="YSort" unique_id=1609355276 instance=ExtResource("28_bg8mx")]
+position = Vector2(648, -210)
+
+[node name="027" parent="YSort" unique_id=1106353861 instance=ExtResource("29_o0cyn")]
+position = Vector2(618, -151)
+
+[node name="028" parent="YSort" unique_id=166075486 instance=ExtResource("30_2aw4x")]
+position = Vector2(454, -311)
+
+[node name="029" parent="YSort" unique_id=1485582969 instance=ExtResource("31_72lps")]
+position = Vector2(849, -310)
+
+[node name="030" parent="YSort" unique_id=270814325 instance=ExtResource("32_heksk")]
+position = Vector2(-117, 437)
+
+[node name="031" parent="YSort" unique_id=1376253920 instance=ExtResource("33_2p8qi")]
+position = Vector2(-112, 251)
+
+[node name="032" parent="YSort" unique_id=1758029150 instance=ExtResource("34_vtluc")]
+position = Vector2(377, 171)
+
+[node name="033" parent="YSort" unique_id=988630706 instance=ExtResource("35_mlr5h")]
+position = Vector2(210, 411)
+
+[node name="034" parent="YSort" unique_id=606566700 instance=ExtResource("36_eryro")]
+position = Vector2(779, 170)
+
+[node name="036" parent="YSort" unique_id=1329966023 instance=ExtResource("37_8tyms")]
+position = Vector2(-230, -321)
+
+[node name="035" parent="YSort" unique_id=1045371618 instance=ExtResource("38_r48a1")]
+position = Vector2(389, -88)
+
+[node name="Player" parent="YSort" unique_id=145132704 instance=ExtResource("39_o0cyn")]
+position = Vector2(1019, 134)
+
+[node name="Background" parent="YSort" unique_id=1183804434 instance=ExtResource("39_2aw4x")]
+z_index = -1
+z_as_relative = false
+position = Vector2(-207, -304)

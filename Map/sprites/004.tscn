@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bfhua5net32jx"]
+
+[ext_resource type="Texture2D" uid="uid://br6cin4tucbbp" path="res://Map/sprites/004.png" id="1_rlhu3"]
+
+[node name="004" type="StaticBody2D" unique_id=1799847597]
+
+[node name="004" type="Sprite2D" parent="." unique_id=88656324]
+position = Vector2(-33, -130)
+texture = ExtResource("1_rlhu3")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=783910915]
+polygon = PackedVector2Array(40, 1, 94, 1, 57, -137, -29, -136, -129, -77, -115, -5)
