@@ -3,10 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://bsglxx7nhxikp" path="res://Map/sprites/008.png" id="1_catbk"]
 
 [node name="008" type="StaticBody2D" unique_id=810311946]
+y_sort_enabled = true
+position = Vector2(-157, 126)
 
 [node name="008" type="Sprite2D" parent="." unique_id=1290711438]
 position = Vector2(121, -135)
 texture = ExtResource("1_catbk")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1304434119]
+y_sort_enabled = true
 polygon = PackedVector2Array(9, 28, 224, -126, 190, -155, -19, -6)

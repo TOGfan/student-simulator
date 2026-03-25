@@ -42,6 +42,7 @@
 
 [node name="Campus" type="Node2D" unique_id=517608768]
 texture_filter = 1
+position = Vector2(0, 1)
 
 [node name="YSort" type="Node2D" parent="." unique_id=908081993]
 y_sort_enabled = true
