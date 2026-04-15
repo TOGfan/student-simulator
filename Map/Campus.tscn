@@ -39,10 +39,10 @@
 [ext_resource type="PackedScene" uid="uid://bifqr6tp081k3" path="res://Map/sprites/035.tscn" id="38_r48a1"]
 [ext_resource type="PackedScene" uid="uid://dp8q3sict4xmh" path="res://Map/background.tscn" id="39_2aw4x"]
 [ext_resource type="PackedScene" uid="uid://63otlsfsjv6o" path="res://Characters/Player.tscn" id="39_o0cyn"]
+[ext_resource type="PackedScene" uid="uid://b7ntttmm3ovqv" path="res://Characters/sprites/scenes/NPC_Zbigniew.tscn" id="40_2aw4x"]
 
 [node name="Campus" type="Node2D" unique_id=517608768]
 texture_filter = 1
-position = Vector2(0, 1)
 
 [node name="YSort" type="Node2D" parent="." unique_id=908081993]
 y_sort_enabled = true
@@ -166,3 +166,6 @@ position = Vector2(1019, 134)
 z_index = -1
 z_as_relative = false
 position = Vector2(-207, -304)
+
+[node name="NpcZbigniew" parent="." unique_id=111072951 instance=ExtResource("40_2aw4x")]
+position = Vector2(449, 418)

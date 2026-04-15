@@ -25,6 +25,7 @@ func _physics_process(_delta):
 	if velocity.length() == 0:
 		# If standing still, play the idle animation for the current direction
 		anim.play("idle_" + current_dir)
+		
 	else:
 		# If moving, play the walk animation for the current direction
 		anim.play("walk_" + current_dir)

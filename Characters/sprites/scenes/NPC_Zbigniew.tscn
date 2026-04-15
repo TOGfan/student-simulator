@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://b7ntttmm3ovqv"]
+
+[ext_resource type="Script" uid="uid://dn708d40vkcmw" path="res://Characters/sprites/scenes/npc_zbigniew.gd" id="1_hbw3c"]
+[ext_resource type="Texture2D" uid="uid://c80o8xrf2u14e" path="res://Characters/sprites/Male/M_01.png" id="1_kfyes"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hbw3c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mdpbm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hbw3c"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="NpcZbigniew" type="StaticBody2D" unique_id=111072951]
+y_sort_enabled = true
+script = ExtResource("1_hbw3c")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1519105941]
+position = Vector2(0, -9)
+texture = ExtResource("1_kfyes")
+hframes = 4
+vframes = 3
+
+[node name="InteractZone" type="Area2D" parent="." unique_id=215879791]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractZone" unique_id=1566109361]
+scale = Vector2(5, 5)
+shape = SubResource("CircleShape2D_hbw3c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1791227034]
+scale = Vector2(0.5, 0.25)
+shape = SubResource("CircleShape2D_mdpbm")
+
+[node name="SpeechBubble" type="PanelContainer" parent="." unique_id=1794560213]
+z_index = 100
+offset_left = 5.0
+offset_top = -93.0
+offset_right = 155.0
+offset_bottom = -18.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_styles/panel = SubResource("StyleBoxFlat_hbw3c")
+
+[node name="MarginContainer" type="MarginContainer" parent="SpeechBubble" unique_id=1296004329]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SpeechBubble/MarginContainer" unique_id=1071095457]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="DialogueText" type="Label" parent="SpeechBubble/MarginContainer/VBoxContainer" unique_id=293011619]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 9
+text = "Lorem ipsum"
+horizontal_alignment = 3
+autowrap_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SpeechBubble/MarginContainer/VBoxContainer" unique_id=1592794024]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="Button1" type="Button" parent="SpeechBubble/MarginContainer/VBoxContainer/HBoxContainer" unique_id=298502256]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 9
+text = "Accept"
+
+[node name="Button2" type="Button" parent="SpeechBubble/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1057161803]
+layout_mode = 2
+theme_override_font_sizes/font_size = 9
+text = "Reject"
+
+[connection signal="body_entered" from="InteractZone" to="." method="_on_interact_zone_body_entered"]
+[connection signal="body_exited" from="InteractZone" to="." method="_on_interact_zone_body_exited"]
+[connection signal="pressed" from="SpeechBubble/MarginContainer/VBoxContainer/HBoxContainer/Button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="SpeechBubble/MarginContainer/VBoxContainer/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
