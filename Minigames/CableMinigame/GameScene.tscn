@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://dafp4n7bau381"]
+
+[ext_resource type="Script" uid="uid://fluree7ornds" path="res://Minigames/CableMinigame/GameScene.gd" id="1_game_scene"]
+[ext_resource type="PackedScene" path="res://Minigames/CableMinigame/Tile.tscn" id="2_tile"]
+
+[node name="GameScene" type="Node2D" unique_id=173338960]
+script = ExtResource("1_game_scene")
+tile_scene = ExtResource("2_tile")
+cell_size = null
+default_level_time = null
+log_input_events = null
+
+[node name="GridRoot" type="Node2D" parent="." unique_id=2114252672]
+
+[node name="LevelTimer" type="Timer" parent="." unique_id=839856807]
+one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=599577729]
+
+[node name="UIRoot" type="MarginContainer" parent="CanvasLayer" unique_id=1316099044]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = -24.0
+offset_bottom = -24.0
+
+[node name="Layout" type="VBoxContainer" parent="CanvasLayer/UIRoot" unique_id=447497361]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="TopBar" type="PanelContainer" parent="CanvasLayer/UIRoot/Layout" unique_id=1433138697]
+custom_minimum_size = Vector2(0, 58)
+layout_mode = 2
+
+[node name="TopRow" type="HBoxContainer" parent="CanvasLayer/UIRoot/Layout/TopBar" unique_id=1684851322]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 14
+
+[node name="LevelLabel" type="Label" parent="CanvasLayer/UIRoot/Layout/TopBar/TopRow" unique_id=71168777]
+layout_mode = 2
+text = "Level 1/1"
+
+[node name="Spacer" type="Control" parent="CanvasLayer/UIRoot/Layout/TopBar/TopRow" unique_id=78102469]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer/UIRoot/Layout/TopBar/TopRow" unique_id=2064162629]
+layout_mode = 2
+text = "Score: 0"
+
+[node name="MovesLabel" type="Label" parent="CanvasLayer/UIRoot/Layout/TopBar/TopRow" unique_id=1055061933]
+layout_mode = 2
+text = "Rotations: 0"
+
+[node name="TimerBar" type="ProgressBar" parent="CanvasLayer/UIRoot/Layout" unique_id=1093710359]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+max_value = 60.0
+value = 60.0
+show_percentage = false
+
+[node name="StatusLabel" type="Label" parent="CanvasLayer/UIRoot/Layout" unique_id=1798386482]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+text = "Connect battery to bulb before time runs out."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ControlsLegend" type="Label" parent="CanvasLayer/UIRoot/Layout" unique_id=643007057]
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+text = "Controls: Click tile to rotate | Arrows/WASD move selection | Space/Enter rotate | Run GameScene/Project (not Tile scene)"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ContentSpacer" type="Control" parent="CanvasLayer/UIRoot/Layout" unique_id=1082052009]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ActionButton" type="Button" parent="CanvasLayer/UIRoot/Layout" unique_id=1032119807]
+visible = false
+custom_minimum_size = Vector2(220, 56)
+layout_mode = 2
+text = "Next Level"

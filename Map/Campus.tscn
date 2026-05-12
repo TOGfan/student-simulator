@@ -40,8 +40,12 @@
 [ext_resource type="PackedScene" uid="uid://dp8q3sict4xmh" path="res://Map/background.tscn" id="39_2aw4x"]
 [ext_resource type="PackedScene" uid="uid://63otlsfsjv6o" path="res://Characters/Player.tscn" id="39_o0cyn"]
 [ext_resource type="PackedScene" uid="uid://b7ntttmm3ovqv" path="res://Characters/sprites/scenes/NPC_Template.tscn" id="40_2aw4x"]
-[ext_resource type="PackedScene" uid="uid://dafp4n7bau381" path="res://Puzzle/GameScene.tscn" id="41_72lps"]
+[ext_resource type="PackedScene" uid="uid://dafp4n7bau381" path="res://Minigames/CableMinigame/GameScene.tscn" id="41_72lps"]
 [ext_resource type="Texture2D" uid="uid://c80o8xrf2u14e" path="res://Characters/sprites/Male/M_01.png" id="41_heksk"]
+[ext_resource type="Texture2D" uid="uid://cymmbsttm4nmc" path="res://Characters/sprites/Female/F_05.png" id="43_2p8qi"]
+[ext_resource type="Texture2D" uid="uid://c0uv74n0pyseq" path="res://Characters/sprites/Male/M_07.png" id="44_vtluc"]
+[ext_resource type="PackedScene" uid="uid://mx3gy8dd2l2y" path="res://Minigames/TypingMinigame/TypingMinigame.tscn" id="45_mlr5h"]
+[ext_resource type="Script" uid="uid://inq2813fnuff" path="res://Map/dean_quest_controler.gd" id="46_eryro"]
 
 [node name="Campus" type="Node2D" unique_id=517608768]
 texture_filter = 1
@@ -175,3 +179,43 @@ npc_sprite = ExtResource("41_heksk")
 dialogue_text_content = "Hey! Can you help me over here? The beer vending machine in C-13 is broken! I'm sure the rats ate the cables again... Can you please repair it? I really need a beer before a Math Analysis test!"
 puzzle_scene = ExtResource("41_72lps")
 final_message = "Thanks! That Piast will for sure help relieve the stress before the exam. I gotta go now, bye!"
+
+[node name="NPC_Krystyna" parent="." unique_id=193449140 instance=ExtResource("40_2aw4x")]
+position = Vector2(192, 635)
+npc_sprite = ExtResource("43_2p8qi")
+dialogue_text_content = "Hi, do you have some free time? I have a very important lecture comming up but the slides go by so fast I can't get all the notes! If you could help me note everything I would be very grateful."
+puzzle_scene = ExtResource("45_mlr5h")
+final_message = "Thank you so much! Now I can properly study for the test. See you later!"
+
+[node name="NPC_Jerzy" parent="." unique_id=1713401710 instance=ExtResource("40_2aw4x")]
+position = Vector2(793, 508)
+npc_sprite = ExtResource("44_vtluc")
+dialogue_text_content = "Hey, wanna earn a free beer? I have to get some paperwork sorted about my Bachelor's thesis, but all this bureauocracy is making me go crazy! If you can do it for me I have a 4-pack waiting in my hot backpack. I will send you the document by E-mail."
+final_message = "Thanks! Here you go, have a nice one!"
+
+[node name="DeanQuestControler" type="Node" parent="NPC_Jerzy" unique_id=1186537729 node_paths=PackedStringArray("secretary_npc", "printer_npc", "supervisor_npc")]
+script = ExtResource("46_eryro")
+secretary_npc = NodePath("../../NPC_Dean_Secretary")
+printer_npc = NodePath("../../NPC_Printer_Office")
+supervisor_npc = NodePath("../../NPC_Supervisor")
+
+[node name="NPC_Printer_Office" parent="." unique_id=841553783 instance=ExtResource("40_2aw4x")]
+position = Vector2(393, 457)
+dialogue_text_content = ""
+button1_text = "I need this one document printed."
+button2_text = ""
+final_message = ""
+
+[node name="NPC_Dean_Secretary" parent="." unique_id=1130269522 instance=ExtResource("40_2aw4x")]
+position = Vector2(777, 765)
+dialogue_text_content = ""
+button1_text = "I want to submit this Bachelor's thesis application."
+button2_text = ""
+final_message = ""
+
+[node name="NPC_Supervisor" parent="." unique_id=614614870 instance=ExtResource("40_2aw4x")]
+position = Vector2(1149, 426)
+dialogue_text_content = ""
+button1_text = "You are the supervisor for Jerzy's Bachelor's thesis, right? I need you to sign here."
+button2_text = ""
+final_message = ""

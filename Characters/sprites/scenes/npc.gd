@@ -11,6 +11,7 @@ signal mission_completed(score)
 @export_multiline var dialogue_text_content: String = "I need help with a puzzle!"
 @export var button1_text: String = "Accept"
 @export var button2_text: String = "Refuse"
+@export var disappear_after_finish: bool = true
 
 @export_category("Mission Settings")
 @export var puzzle_scene: PackedScene 
@@ -63,21 +64,21 @@ func open_bubble():
 # --- MISSION LOGIC ---
 func _on_button1_pressed():
 	bubble.visible = false 
-	mission_accepted.emit() # Fire the optional custom action!
 	
+	# We ALWAYS emit this. We will use this signal to progress normal conversations!
+	mission_accepted.emit() 
+	
+	# ONLY spawn a puzzle if one is actually assigned!
+	# Notice we removed the "else" block so it doesn't instantly end the mission.
 	if puzzle_scene:
 		active_puzzle_layer = CanvasLayer.new()
 		active_puzzle_layer.layer = 100 
-		
 		var puzzle = puzzle_scene.instantiate()
-		
 		active_puzzle_layer.add_child(puzzle)
 		get_tree().root.add_child(active_puzzle_layer) 
-		
 		puzzle.puzzle_finished.connect(_on_puzzle_won)
 		get_tree().paused = true 
-	else:
-		print("This NPC doesn't have a puzzle assigned!")
+		
 
 func _on_button2_pressed():
 	bubble.visible = false 
@@ -88,19 +89,17 @@ func _on_puzzle_won(score):
 		active_puzzle_layer.queue_free()
 		active_puzzle_layer = null 
 	
-	# 1. Fire the custom callback with the score so you can give rewards
 	mission_completed.emit(score)
 	
-	# 2. Universal End Sequence
 	dialogue_text.text = final_message
 	Button1.hide()
 	Button2.hide()
-	
 	bubble.visible = true
 	
-	# Wait 3 seconds
 	await get_tree().create_timer(3.0).timeout
-	
 	bubble.visible = false
-	queue_free()
+	
+	# Only hide the NPC if the box is checked!
+	if disappear_after_finish:
+		queue_free()
 	

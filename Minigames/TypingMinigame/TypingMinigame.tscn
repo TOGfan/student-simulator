@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://mx3gy8dd2l2y"]
+
+[ext_resource type="Script" uid="uid://crm4v4pl0w6j2" path="res://Minigames/TypingMinigame/typing_minigame.gd" id="1_7s4ll"]
+
+[node name="TypingMinigame" type="Control" unique_id=147390813]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_7s4ll")
+
+[node name="Panel" type="Panel" parent="." unique_id=2056292194]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=163593819]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TargetText" type="Label" parent="Panel/VBoxContainer" unique_id=2140353850]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="Panel/VBoxContainer" unique_id=1443821066]
+layout_mode = 2

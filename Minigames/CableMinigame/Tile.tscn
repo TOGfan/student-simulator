@@ -1,0 +1,13 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" uid="uid://clnf1qr6ow4dg" path="res://Minigames/CableMinigame/Tile.gd" id="1_tile_script"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xaq2h"]
+size = Vector2(96, 96)
+
+[node name="Tile" type="Area2D"]
+input_pickable = true
+script = ExtResource("1_tile_script")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xaq2h")
