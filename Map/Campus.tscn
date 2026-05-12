@@ -39,8 +39,9 @@
 [ext_resource type="PackedScene" uid="uid://bifqr6tp081k3" path="res://Map/sprites/035.tscn" id="38_r48a1"]
 [ext_resource type="PackedScene" uid="uid://dp8q3sict4xmh" path="res://Map/background.tscn" id="39_2aw4x"]
 [ext_resource type="PackedScene" uid="uid://63otlsfsjv6o" path="res://Characters/Player.tscn" id="39_o0cyn"]
-[ext_resource type="PackedScene" uid="uid://b7ntttmm3ovqv" path="res://Characters/sprites/scenes/NPC_Zbigniew.tscn" id="40_2aw4x"]
+[ext_resource type="PackedScene" uid="uid://b7ntttmm3ovqv" path="res://Characters/sprites/scenes/NPC_Template.tscn" id="40_2aw4x"]
 [ext_resource type="PackedScene" uid="uid://dafp4n7bau381" path="res://Puzzle/GameScene.tscn" id="41_72lps"]
+[ext_resource type="Texture2D" uid="uid://c80o8xrf2u14e" path="res://Characters/sprites/Male/M_01.png" id="41_heksk"]
 
 [node name="Campus" type="Node2D" unique_id=517608768]
 texture_filter = 1
@@ -168,6 +169,9 @@ z_index = -1
 z_as_relative = false
 position = Vector2(-207, -304)
 
-[node name="NpcZbigniew" parent="." unique_id=111072951 instance=ExtResource("40_2aw4x")]
-position = Vector2(449, 418)
+[node name="NPC_Zbigniew" parent="." unique_id=111072951 instance=ExtResource("40_2aw4x")]
+position = Vector2(452, 413)
+npc_sprite = ExtResource("41_heksk")
+dialogue_text_content = "Hey! Can you help me over here? The beer vending machine in C-13 is broken! I'm sure the rats ate the cables again... Can you please repair it? I really need a beer before a Math Analysis test!"
 puzzle_scene = ExtResource("41_72lps")
+final_message = "Thanks! That Piast will for sure help relieve the stress before the exam. I gotta go now, bye!"

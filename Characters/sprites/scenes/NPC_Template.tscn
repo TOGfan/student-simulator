@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b7ntttmm3ovqv"]
 
-[ext_resource type="Script" uid="uid://dn708d40vkcmw" path="res://Characters/sprites/scenes/npc_zbigniew.gd" id="1_hbw3c"]
+[ext_resource type="Script" uid="uid://dn708d40vkcmw" path="res://Characters/sprites/scenes/npc.gd" id="1_hbw3c"]
 [ext_resource type="Texture2D" uid="uid://c80o8xrf2u14e" path="res://Characters/sprites/Male/M_01.png" id="1_kfyes"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hbw3c"]
@@ -19,7 +19,7 @@ corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
-[node name="NpcZbigniew" type="StaticBody2D" unique_id=111072951]
+[node name="NPC" type="StaticBody2D" unique_id=111072951]
 y_sort_enabled = true
 script = ExtResource("1_hbw3c")
 
