@@ -96,6 +96,9 @@ func _on_puzzle_won(score):
 	Button2.hide()
 	bubble.visible = true
 	
+	PlayerStats.add_beer(50.0)       # Give 50% of their beer back!
+	PlayerStats.add_reputation(10.0) # Add 10% to game completion!
+	
 	await get_tree().create_timer(3.0).timeout
 	bubble.visible = false
 	

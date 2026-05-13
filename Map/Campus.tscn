@@ -46,6 +46,7 @@
 [ext_resource type="Texture2D" uid="uid://c0uv74n0pyseq" path="res://Characters/sprites/Male/M_07.png" id="44_vtluc"]
 [ext_resource type="PackedScene" uid="uid://mx3gy8dd2l2y" path="res://Minigames/TypingMinigame/TypingMinigame.tscn" id="45_mlr5h"]
 [ext_resource type="Script" uid="uid://inq2813fnuff" path="res://Map/dean_quest_controler.gd" id="46_eryro"]
+[ext_resource type="PackedScene" uid="uid://pa325uu27rkv" path="res://UI/MainUI.tscn" id="47_8tyms"]
 
 [node name="Campus" type="Node2D" unique_id=517608768]
 texture_filter = 1
@@ -202,20 +203,22 @@ supervisor_npc = NodePath("../../NPC_Supervisor")
 [node name="NPC_Printer_Office" parent="." unique_id=841553783 instance=ExtResource("40_2aw4x")]
 position = Vector2(393, 457)
 dialogue_text_content = ""
-button1_text = "I need this one document printed."
+button1_text = ""
 button2_text = ""
 final_message = ""
 
 [node name="NPC_Dean_Secretary" parent="." unique_id=1130269522 instance=ExtResource("40_2aw4x")]
 position = Vector2(777, 765)
 dialogue_text_content = ""
-button1_text = "I want to submit this Bachelor's thesis application."
+button1_text = ""
 button2_text = ""
 final_message = ""
 
 [node name="NPC_Supervisor" parent="." unique_id=614614870 instance=ExtResource("40_2aw4x")]
 position = Vector2(1149, 426)
 dialogue_text_content = ""
-button1_text = "You are the supervisor for Jerzy's Bachelor's thesis, right? I need you to sign here."
+button1_text = ""
 button2_text = ""
 final_message = ""
+
+[node name="MainUi" parent="." unique_id=1890605967 instance=ExtResource("47_8tyms")]
