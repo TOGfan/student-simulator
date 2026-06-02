@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://mx3gy8dd2l2y"]
 
 [ext_resource type="Script" uid="uid://crm4v4pl0w6j2" path="res://Minigames/TypingMinigame/typing_minigame.gd" id="1_7s4ll"]
+[ext_resource type="Texture2D" uid="uid://bq24qr7tgmyib" path="res://Gemini_Generated_Image_wnl48pwnl48pwnl4.png" id="2_jrfx6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jrfx6"]
+bg_color = Color(1, 1, 1, 1)
 
 [node name="TypingMinigame" type="Control" unique_id=147390813]
 layout_mode = 3
@@ -9,16 +13,35 @@ script = ExtResource("1_7s4ll")
 
 [node name="Panel" type="Panel" parent="." unique_id=2056292194]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1235.0
+offset_bottom = 671.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=163593819]
+[node name="GeminiGeneratedImageWnl48Pwnl48Pwnl4" type="Sprite2D" parent="Panel" unique_id=1853839027]
+position = Vector2(616.5, 332)
+scale = Vector2(0.8917151, 0.8645833)
+texture = ExtResource("2_jrfx6")
+
+[node name="TargetText" type="Label" parent="Panel" unique_id=2140353850]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 235.0
+offset_top = 106.0
+offset_right = 1002.0
+offset_bottom = 362.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+text = "Lecture"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="TargetText" type="Label" parent="Panel/VBoxContainer" unique_id=2140353850]
-layout_mode = 2
-
-[node name="LineEdit" type="LineEdit" parent="Panel/VBoxContainer" unique_id=1443821066]
-layout_mode = 2
+[node name="LineEdit" type="LineEdit" parent="Panel" unique_id=1443821066]
+layout_mode = 0
+offset_left = 444.0
+offset_top = 394.0
+offset_right = 787.0
+offset_bottom = 587.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_jrfx6")
+placeholder_text = "Start typing..."
+alignment = 1

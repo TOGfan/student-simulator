@@ -12,8 +12,8 @@ var lecture_slides = [
 var current_slide_index = 0
 var time_elapsed = 0.0
 
-@onready var target_label = $Panel/VBoxContainer/TargetText
-@onready var input_box = $Panel/VBoxContainer/LineEdit
+@onready var target_label = $Panel/TargetText
+@onready var input_box = $Panel/LineEdit
 
 func _ready():
 	# Make sure this runs even when the main game is paused

@@ -47,6 +47,9 @@
 [ext_resource type="PackedScene" uid="uid://mx3gy8dd2l2y" path="res://Minigames/TypingMinigame/TypingMinigame.tscn" id="45_mlr5h"]
 [ext_resource type="Script" uid="uid://inq2813fnuff" path="res://Map/dean_quest_controler.gd" id="46_eryro"]
 [ext_resource type="PackedScene" uid="uid://pa325uu27rkv" path="res://UI/MainUI.tscn" id="47_8tyms"]
+[ext_resource type="Texture2D" uid="uid://gfkbf04fll3d" path="res://Characters/sprites/Female/F_07.png" id="47_r48a1"]
+[ext_resource type="Texture2D" uid="uid://no6ilob5bkmr" path="res://Characters/sprites/Male/M_10.png" id="48_gjco4"]
+[ext_resource type="Texture2D" uid="uid://de8muueb5otja" path="res://Characters/sprites/Male/M_04.png" id="49_u7xci"]
 
 [node name="Campus" type="Node2D" unique_id=517608768]
 texture_filter = 1
@@ -202,23 +205,26 @@ supervisor_npc = NodePath("../../NPC_Supervisor")
 
 [node name="NPC_Printer_Office" parent="." unique_id=841553783 instance=ExtResource("40_2aw4x")]
 position = Vector2(393, 457)
+npc_sprite = ExtResource("47_r48a1")
 dialogue_text_content = ""
-button1_text = ""
-button2_text = ""
+button1_text = "On my way!"
+button2_text = "All right, thank you!"
 final_message = ""
 
 [node name="NPC_Dean_Secretary" parent="." unique_id=1130269522 instance=ExtResource("40_2aw4x")]
 position = Vector2(777, 765)
+npc_sprite = ExtResource("48_gjco4")
 dialogue_text_content = ""
-button1_text = ""
-button2_text = ""
+button1_text = "On my way!"
+button2_text = "All right, thank you!"
 final_message = ""
 
 [node name="NPC_Supervisor" parent="." unique_id=614614870 instance=ExtResource("40_2aw4x")]
 position = Vector2(1149, 426)
+npc_sprite = ExtResource("49_u7xci")
 dialogue_text_content = ""
-button1_text = ""
-button2_text = ""
+button1_text = "On my way!"
+button2_text = "All right, thank you!"
 final_message = ""
 
 [node name="MainUi" parent="." unique_id=1890605967 instance=ExtResource("47_8tyms")]

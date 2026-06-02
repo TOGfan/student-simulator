@@ -23,8 +23,8 @@ func _ready():
 		
 		# We still set up their locked dialogue just in case
 		secretary_npc.dialogue_text_content = "Please wait your turn."
-		printer_npc.dialogue_text_content = "The printer is currently idle."
-		supervisor_npc.dialogue_text_content = "I am very busy. Please leave."
+		printer_npc.dialogue_text_content = "Hello, do you have anything to print?"
+		supervisor_npc.dialogue_text_content = "*Blows cigarette smoke in your face*"
 		#secretary_npc.Button1.hide()
 		#printer_npc.Button1.hide()
 		#supervisor_npc.Button1.hide()
@@ -51,8 +51,14 @@ func _on_jerzy_talked():
 		_set_npc_active(secretary_npc, true)
 		_set_npc_active(printer_npc, true)
 		_set_npc_active(supervisor_npc, true)
-		
+		secretary_npc.Button1.hide()
+		printer_npc.Button1.hide()
+		supervisor_npc.Button1.hide()
+
 		_update_dialogues()
+	if quest_step == 6:
+		PlayerStats.add_beer(50.0)       # Give 50% of their beer back!
+		PlayerStats.add_reputation(10.0) # Add 10% to game completion!
 
 func _on_secretary_talked():
 	if quest_step == 1:
@@ -64,7 +70,7 @@ func _on_secretary_talked():
 	elif quest_step == 5:
 		quest_step = 6 
 		_update_dialogues()
-		print("Quest Fully Complete! Give the player an item here!")
+
 
 func _on_printer_talked():
 	if quest_step == 2:
@@ -86,34 +92,34 @@ func _update_dialogues():
 			jerzy_npc.Button2.text = "Leave"
 			
 			secretary_npc.Button1.show()
-			secretary_npc.dialogue_text_content = "Ah, for Jerzy. Why are you showing this on the phone? I need this printed. Go to C-13."
+			secretary_npc.dialogue_text_content = "Ah, for Jerzy. Why won't he come here himself? Whatever. Why are you showing this on the phone? I need this printed. There's a printer in C-13."
 			secretary_npc.button1_text = "On my way!"
 		2:
-			secretary_npc.dialogue_text_content = "Did you print them yet? Go to C-13."
+			secretary_npc.dialogue_text_content = "Did you print it yet? Go to C-13."
 			
 			printer_npc.Button1.show()
-			printer_npc.dialogue_text_content = "ERROR: PC LOAD LETTER."
-			printer_npc.button1_text = "Smash Print Button"
+			printer_npc.dialogue_text_content = "Alright, I got your E-mail with the documents, they are already printed. Here you go!"
+			printer_npc.button1_text = "Thanks!"
 		3:
 			printer_npc.Button1.hide()
-			printer_npc.dialogue_text_content = "Printer is out of ink."
+			printer_npc.dialogue_text_content = "Hi, I think I already gave you this print..."
 			
-			secretary_npc.dialogue_text_content = "Great, now take these prints to the Supervisor for a signature."
-			secretary_npc.button1_text = "Show Prints"
+			secretary_npc.dialogue_text_content = "Everything seems fine... Now, you gotta take these prints to Jerzy's Supervisor for a signature. He's probably having a smoke in front of D2 as always."
+			secretary_npc.button1_text = "Alright, I'll be back soon!"
 		4:
-			secretary_npc.dialogue_text_content = "Waiting on the supervisor's signature."
+			secretary_npc.dialogue_text_content = "You were supposed to get the signature, why are you still here?"
 			
 			supervisor_npc.Button1.show()
-			supervisor_npc.dialogue_text_content = "Ah, you need a signature? Hand me the papers."
+			supervisor_npc.dialogue_text_content = "Ah, Jerzy sent you for a signature? Typical, he always makes people do stuff for him. Hand me the papers."
 			supervisor_npc.button1_text = "Give Papers"
 		5:
 			supervisor_npc.Button1.hide()
-			supervisor_npc.dialogue_text_content = "Take those to the Secretary. Do not bother me again."
+			supervisor_npc.dialogue_text_content = "*Blows cigarette smoke in your face*"
 			
-			secretary_npc.dialogue_text_content = "You got the signature! Thank you, documents accepted."
+			secretary_npc.dialogue_text_content = "Got the signature? Fine, documents accepted."
 			secretary_npc.button1_text = "Turn in Quest"
 		6:
 			secretary_npc.Button1.hide()
-			secretary_npc.dialogue_text_content = "Your paperwork is finalized. Go study!"
+			secretary_npc.dialogue_text_content = "Do you need anything else?"
 			
-			jerzy_npc.dialogue_text_content = "Thanks for doing that! You saved my grade."
+			jerzy_npc.dialogue_text_content = "Thanks for doing that! I'd rather give out free beer than deal with the Dean's... Actually, that's exactly what I'm doing! Here you go!"

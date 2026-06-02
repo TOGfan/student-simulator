@@ -2,8 +2,17 @@
 
 [ext_resource type="Script" uid="uid://xw3smxq0adhc" path="res://UI/main_ui.gd" id="1_xv1u1"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wa2eh"]
+bg_color = Color(0.9999997, 0.8752322, 0.48331404, 1)
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_detail = 10
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xv1u1"]
 bg_color = Color(1, 1, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fdbdo"]
+bg_color = Color(0.48975343, 0.8335903, 0.99999994, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wwh41"]
 bg_color = Color(0, 0, 1, 1)
@@ -12,23 +21,30 @@ bg_color = Color(0, 0, 1, 1)
 script = ExtResource("1_xv1u1")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=358168595]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 458.0
+offset_bottom = 95.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1949768717]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=2067973099]
 layout_mode = 2
+text = "Beer content in blood:"
 
 [node name="BeerBar" type="ProgressBar" parent="MarginContainer/VBoxContainer" unique_id=1900512944]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_wa2eh")
 theme_override_styles/fill = SubResource("StyleBoxFlat_xv1u1")
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer" unique_id=55075826]
+layout_mode = 2
+text = "Reputation:"
 
 [node name="ReputationBar" type="ProgressBar" parent="MarginContainer/VBoxContainer" unique_id=1145458442]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
+theme_override_styles/background = SubResource("StyleBoxFlat_fdbdo")
 theme_override_styles/fill = SubResource("StyleBoxFlat_wwh41")
