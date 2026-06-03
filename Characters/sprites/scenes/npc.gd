@@ -26,9 +26,11 @@ var active_puzzle_layer: CanvasLayer = null
 @onready var dialogue_text = $SpeechBubble/MarginContainer/VBoxContainer/DialogueText
 @onready var Button1 = $SpeechBubble/MarginContainer/VBoxContainer/HBoxContainer/Button1
 @onready var Button2 = $SpeechBubble/MarginContainer/VBoxContainer/HBoxContainer/Button2
+@onready var interact_prompt = $InteractPrompt 
 
 func _ready():
 	bubble.visible = false
+	interact_prompt.visible = false # NEW
 	
 	if npc_sprite:
 		sprite.texture = npc_sprite
@@ -43,11 +45,14 @@ func _ready():
 func _on_interact_zone_body_entered(body):
 	if body.name == "Player":
 		player_in_zone = true
+		if not bubble.visible: 
+			interact_prompt.visible = true # NEW
 
 func _on_interact_zone_body_exited(body):
 	if body.name == "Player":
 		player_in_zone = false
 		bubble.visible = false
+		interact_prompt.visible = false # NEW	
 
 func _process(_delta):
 	if player_in_zone and Input.is_action_just_pressed("interact") and not bubble.visible:
@@ -55,7 +60,7 @@ func _process(_delta):
 
 func open_bubble():
 	dialogue_text.text = dialogue_text_content
-	
+	interact_prompt.visible = false
 	# Safety check: make sure buttons are visible if we open the bubble!
 	Button1.show()
 	Button2.show()
@@ -97,7 +102,7 @@ func _on_puzzle_won(score):
 	bubble.visible = true
 	
 	PlayerStats.add_beer(50.0)       # Give 50% of their beer back!
-	PlayerStats.add_reputation(10.0) # Add 10% to game completion!
+	PlayerStats.add_reputation(35.0) # Add 10% to game completion!
 	
 	await get_tree().create_timer(3.0).timeout
 	bubble.visible = false

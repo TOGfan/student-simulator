@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dn708d40vkcmw" path="res://Characters/sprites/scenes/npc.gd" id="1_hbw3c"]
 [ext_resource type="Texture2D" uid="uid://c80o8xrf2u14e" path="res://Characters/sprites/Male/M_01.png" id="1_kfyes"]
+[ext_resource type="Texture2D" uid="uid://b71s13x280k8c" path="res://Characters/sprites/scenes/wRSL06.png" id="3_0hf6d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hbw3c"]
 
@@ -18,6 +19,8 @@ corner_radius_top_left = 3
 corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_07ofm"]
 
 [node name="NPC" type="StaticBody2D" unique_id=111072951]
 y_sort_enabled = true
@@ -88,6 +91,20 @@ text = "Accept"
 layout_mode = 2
 theme_override_font_sizes/font_size = 9
 text = "Reject"
+
+[node name="InteractPrompt" type="PanelContainer" parent="." unique_id=1836230251]
+visible = false
+z_index = 100
+offset_left = -8.0
+offset_top = -44.0
+offset_right = 8.0
+offset_bottom = -28.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_07ofm")
+
+[node name="WRsl06" type="Sprite2D" parent="InteractPrompt" unique_id=427757957]
+position = Vector2(8, 8)
+scale = Vector2(0.18674698, 0.19879518)
+texture = ExtResource("3_0hf6d")
 
 [connection signal="body_entered" from="InteractZone" to="." method="_on_interact_zone_body_entered"]
 [connection signal="body_exited" from="InteractZone" to="." method="_on_interact_zone_body_exited"]

@@ -18,6 +18,7 @@ bg_color = Color(0.48975343, 0.8335903, 0.99999994, 1)
 bg_color = Color(0, 0, 1, 1)
 
 [node name="MainUi" type="CanvasLayer" unique_id=1890605967]
+process_mode = 3
 script = ExtResource("1_xv1u1")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=358168595]
@@ -48,3 +49,60 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_styles/background = SubResource("StyleBoxFlat_fdbdo")
 theme_override_styles/fill = SubResource("StyleBoxFlat_wwh41")
+
+[node name="DarkOverlay" type="ColorRect" parent="." unique_id=780612984]
+offset_left = -599.0
+offset_top = -472.0
+offset_right = 1825.0
+offset_bottom = 1065.0
+color = Color(0, 0, 0, 0.29411766)
+
+[node name="GameOverPanel" type="Panel" parent="." unique_id=104237714]
+visible = false
+offset_left = 217.0
+offset_top = 238.0
+offset_right = 893.0
+offset_bottom = 474.0
+
+[node name="Label" type="Label" parent="GameOverPanel" unique_id=1161078909]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 90.0
+offset_right = 572.0
+offset_bottom = 139.0
+theme_override_font_sizes/font_size = 35
+text = "GAME OVER - You sobered up!"
+
+[node name="RestartButton" type="Button" parent="GameOverPanel" unique_id=570197777]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 156.0
+offset_right = 541.0
+offset_bottom = 202.0
+text = "Start Again"
+
+[node name="WinPanel" type="Panel" parent="." unique_id=1376531233]
+visible = false
+offset_left = 218.0
+offset_top = 238.0
+offset_right = 894.0
+offset_bottom = 474.0
+
+[node name="Label" type="Label" parent="WinPanel" unique_id=1786535990]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 34.0
+offset_right = 641.0
+offset_bottom = 135.0
+theme_override_font_sizes/font_size = 35
+text = "YOU WIN - You gained the respect
+of PWR Students!"
+horizontal_alignment = 1
+
+[node name="WinRestartButton" type="Button" parent="WinPanel" unique_id=1691444726]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 156.0
+offset_right = 541.0
+offset_bottom = 202.0
+text = "whatever"

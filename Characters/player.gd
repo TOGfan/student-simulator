@@ -4,14 +4,18 @@ extends CharacterBody2D
 
 # Grab the AnimationPlayer node so we can use it in code
 @onready var anim = $AnimationPlayer
-
-# We use this to remember where the player was looking when they stop moving
+@onready var wasd_prompt = $WASDPrompt
+# We use this to remember where the aplayer was looking when they stop moving
 var current_dir = "down" 
 
 func _physics_process(_delta):
 	# 1. Get Input
 	var direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	velocity = direction * speed
+	
+	if direction != Vector2.ZERO and is_instance_valid(wasd_prompt):
+		wasd_prompt.queue_free() 
+	
 	
 	# 2. Determine Facing Direction
 	if direction.x != 0:

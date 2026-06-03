@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bshh88i5k557p" path="res://Characters/player.gd" id="1_oo13o"]
 [ext_resource type="Texture2D" uid="uid://d24sqfi4f05iq" path="res://Characters/sprites/Male/M_12.png" id="1_t8hoq"]
+[ext_resource type="Texture2D" uid="uid://dephvw6r41tbs" path="res://Characters/sprites/scenes/pixel-art-keyboard-arrow-keys-keyboard-play-keys-icon-for-8bit-game-on-white-background-vector.png" id="3_1ju47"]
 
 [sub_resource type="Animation" id="Animation_oo13o"]
 length = 0.001
@@ -181,3 +182,15 @@ shape = SubResource("CircleShape2D_oo13o")
 position = Vector2(-3, 7)
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
+
+[node name="WASDPrompt" type="Label" parent="." unique_id=1706060267]
+z_index = 100
+offset_left = -34.0
+offset_top = -65.0
+offset_right = 38.0
+offset_bottom = 10.0
+
+[node name="PixelArtKeyboardArrowKeysKeyboardPlayKeysIconFor8BitGameOnWhiteBackgroundVector" type="Sprite2D" parent="WASDPrompt" unique_id=433895261]
+position = Vector2(34, 26.999998)
+scale = Vector2(0.043236747, 0.045714326)
+texture = ExtResource("3_1ju47")

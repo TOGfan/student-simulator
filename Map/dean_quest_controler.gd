@@ -58,7 +58,7 @@ func _on_jerzy_talked():
 		_update_dialogues()
 	if quest_step == 6:
 		PlayerStats.add_beer(50.0)       # Give 50% of their beer back!
-		PlayerStats.add_reputation(10.0) # Add 10% to game completion!
+		PlayerStats.add_reputation(35.0) # Add 10% to game completion!
 
 func _on_secretary_talked():
 	if quest_step == 1:
